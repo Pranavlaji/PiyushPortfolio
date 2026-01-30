@@ -1,0 +1,135 @@
+.technical {
+    background-color: var(--color-cream);
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+}
+
+.technical__wrapper {
+    padding-left: var(--space-3xl);
+    padding-right: var(--space-3xl);
+}
+
+.technical__content {
+    width: 100%;
+}
+
+/* Header with dot and label */
+.technical__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.technical__dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-lavender);
+    /* Using lavender for distinction */
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.technical__label {
+    font-size: var(--font-base);
+    font-weight: var(--weight-medium);
+    color: var(--color-midnight);
+}
+
+/* Divider line */
+.technical__divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-midnight-10);
+    margin-bottom: var(--space-2xl);
+}
+
+/* Two column layout */
+.technical__columns {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    /* Video on right, or maybe left? Let's mirror About: Text Left -> 1.2fr 1fr */
+    /* Let's Try: Video Left (1.2fr), Text Right (1fr) for variety? Or consistent? 
+       User said "like about me". About has big text left, small text right. 
+       Let's do: Text Left, Video Right.
+    */
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+}
+
+.technical__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.technical__bio {
+    font-size: var(--font-xl);
+    line-height: 1.5;
+    color: var(--color-midnight);
+    margin: 0;
+}
+
+.technical__bio--secondary {
+    font-size: var(--font-lg);
+    color: var(--color-midnight-50);
+}
+
+/* Video Container */
+.technical__video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--color-midnight);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+}
+
+.technical__iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.technial_link {
+    color: var(--color-lavender);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .technical__columns {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .technical__video-wrapper {
+        order: -1;
+        /* Show video first on mobile? or last? Let's keep text first for now. */
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .technical__wrapper {
+        padding-left: var(--space-lg);
+        padding-right: var(--space-lg);
+    }
+}
+
+@media (max-width: 640px) {
+    .technical__wrapper {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+
+    .technical {
+        padding-top: var(--space-2xl);
+        padding-bottom: var(--space-2xl);
+    }
+
+    .technical__bio {
+        font-size: var(--font-lg);
+    }
+}

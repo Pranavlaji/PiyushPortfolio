@@ -1,0 +1,136 @@
+.video-card {
+    flex-shrink: 0;
+    width: 60vw;
+    /* Desktop: Huge cards for focus */
+    max-width: 800px;
+    /* Cap it for ultra-wide screens */
+    cursor: pointer;
+    transition: transform var(--transition-base);
+}
+
+/* Vertical Video Card (Reels/Shorts) */
+.video-card--vertical {
+    width: 32vw;
+    /* Slimmer but still large for vertical */
+    max-width: 450px;
+}
+
+.video-card--vertical .video-card__thumbnail {
+    aspect-ratio: 9 / 16;
+}
+
+.video-card__thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: var(--color-midnight);
+    border-radius: 2px;
+}
+
+.video-card__img,
+.video-card__preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-card__preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: black;
+}
+
+.video-card__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #3a4568 0%, var(--color-midnight) 100%);
+}
+
+.video-card__icon {
+    width: 48px;
+    height: 48px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.video-card__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(33, 40, 66, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.video-card__play-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.video-card--coral .video-card__play-btn {
+    background-color: var(--color-coral);
+}
+
+.video-card--lavender .video-card__play-btn {
+    background-color: var(--color-lavender);
+}
+
+.video-card__play-btn svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+    margin-left: 3px;
+    /* visual centering for play icon */
+}
+
+.video-card:hover .video-card__play-btn {
+    transform: scale(1.1);
+}
+
+.video-card__title {
+    font-size: var(--font-base);
+    font-weight: var(--weight-medium);
+    color: var(--color-midnight);
+    margin-top: var(--space-md);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .video-card {
+        width: 80vw;
+        /* Most of the screen on mobile */
+    }
+
+    .video-card--vertical {
+        width: 65vw;
+    }
+
+    .video-card__play-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .video-card__play-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .video-card__title {
+        font-size: var(--font-sm);
+    }
+}

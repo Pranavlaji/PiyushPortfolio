@@ -1,0 +1,151 @@
+.works-row {
+    width: 100%;
+    position: relative;
+    /* Context for absolute arrows */
+}
+
+/* Carousel Navigation Arrows */
+.works-row__arrow {
+    position: absolute;
+    top: 55%;
+    /* Slightly lower to center visually with cards */
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--color-cream);
+    border: 1px solid var(--color-midnight-10);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: var(--color-midnight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    opacity: 0;
+    /* Hidden by default until hover or logic */
+    pointer-events: none;
+}
+
+.works-row:hover .works-row__arrow {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.works-row__arrow:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.works-row__arrow:hover {
+    background-color: var(--color-midnight);
+    color: var(--color-cream);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.works-row__arrow--left {
+    left: var(--space-md);
+}
+
+.works-row__arrow--right {
+    right: var(--space-md);
+}
+
+.works-row__arrow svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+@media (hover: none) {
+    .works-row__arrow {
+        display: none;
+        /* Hide on touch devices */
+    }
+}
+
+.works-row__company {
+    font-size: var(--font-2xl);
+    font-weight: var(--weight-bold);
+    margin-bottom: var(--space-lg);
+    color: var(--color-midnight);
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+}
+
+.works-row--coral .works-row__company::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-coral);
+    border-radius: 50%;
+}
+
+.works-row--lavender .works-row__company::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-lavender);
+    border-radius: 50%;
+}
+
+.works-row__scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    touch-action: pan-x;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.works-row__scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.works-row__scroll-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+
+    /* Carousel Logic */
+    scroll-snap-type: x mandatory;
+    padding-left: var(--space-md);
+    /* Start normally on the left */
+    padding-right: calc(50vw - 16vw);
+    /* Keep right padding to allow last item to center if desired, or just match left */
+    scroll-padding: 0;
+}
+
+.works-row__scroll-track {
+    display: flex;
+    gap: var(--space-xl);
+    /* Increased gap for better isolation */
+    padding: var(--space-sm) 0;
+    width: max-content;
+    align-items: center;
+    /* Center cards vertically */
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .works-row__company {
+        font-size: var(--font-xl);
+    }
+
+    .works-row__scroll-track {
+        gap: var(--space-md);
+    }
+}
