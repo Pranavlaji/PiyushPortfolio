@@ -2,9 +2,10 @@ import { useEffect } from 'react';
 import './VideoModal.css';
 
 export default function VideoModal({ video, onClose }) {
-    if (!video) return null;
-
+    // Hooks must be at the top level, before any early returns
     useEffect(() => {
+        if (!video) return;
+
         const handleEsc = (e) => {
             if (e.key === 'Escape') onClose();
         };
@@ -14,9 +15,11 @@ export default function VideoModal({ video, onClose }) {
 
         return () => {
             window.removeEventListener('keydown', handleEsc);
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = ''; // Restore default
         };
-    }, [onClose]);
+    }, [video, onClose]);
+
+    if (!video) return null;
 
     // Parse YouTube ID if it's a YouTube link
     const getYouTubeEmbedUrl = (url) => {

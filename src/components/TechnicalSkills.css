@@ -87,10 +87,11 @@
     box-shadow: var(--shadow-lg);
 }
 
-.technical__iframe {
+.technical__video {
     width: 100%;
     height: 100%;
-    border: none;
+    object-fit: cover;
+    display: block;
 }
 
 .technial_link {

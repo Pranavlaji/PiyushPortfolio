@@ -12,7 +12,7 @@ export const companies = [
     },
     {
         id: 2,
-        name: "Garima Bangar",
+        name: "Garima Bangar (IIT Bombay | 111k Subscribers)",
         accent: "lavender",
         videos: [
             { id: "v2-1", title: "", thumbnail: null, src: "https://youtu.be/PvATyKXtf-U?si=h9N37X979E7-H4tA" },
@@ -38,16 +38,14 @@ export const companies = [
     },
     {
         id: 5,
-        name: "JyotirVastu Academy",
+        name: "JyotirVastu Academy (40k Subscribers)",
         accent: "coral",
         videos: [
+            { id: "v5-1", title: "", thumbnail: null, src: "https://youtu.be/bEGhS5WK8gI" },
+            { id: "v5-2", title: "", thumbnail: null, src: "https://youtu.be/oCSYFWf6jHU" },
             { id: "v5-3", title: "", thumbnail: null, src: "https://youtube.com/shorts/yE0MM5MSbM4?feature=share" },
             { id: "v5-4", title: "", thumbnail: null, src: "https://youtube.com/shorts/eVgQQI_2jgA?feature=share" },
             { id: "v5-5", title: "", thumbnail: null, src: "https://youtube.com/shorts/FsBp2XsTt78?feature=share" },
-            { id: "v5-1", title: "", thumbnail: null, src: "https://youtu.be/bEGhS5WK8gI" },
-            { id: "v5-2", title: "", thumbnail: null, src: "https://youtu.be/oCSYFWf6jHU" },
-
-
         ]
     }
 ];

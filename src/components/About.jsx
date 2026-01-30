@@ -23,9 +23,9 @@ export default function About() {
                             A creator focused on crafting clean, impactful, and timeless visual experiences spanning video, content direction, and web design. Driven by impact and storytelling.
                         </p>
                         <p className="about__bio about__bio--secondary">
-                            I'm inspired by cinema, music and modern art,
+                            I'm
                             constantly finding new ways to bring fresh
-                            perspectives across mediums.
+                            perspectives across mediums, turning views into engagement and clicks into conversions.
                         </p>
                     </div>
                 </motion.div>
