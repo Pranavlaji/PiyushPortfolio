@@ -25,7 +25,7 @@ export default function About() {
                         <p className="about__bio about__bio--secondary">
                             I'm
                             constantly finding new ways to bring fresh
-                            perspectives across mediums, turning views into engagement and clicks into conversionsg.
+                            perspectives across mediums, turning views into engagement and clicks into conversions.
                         </p>
                     </div>
                 </motion.div>
